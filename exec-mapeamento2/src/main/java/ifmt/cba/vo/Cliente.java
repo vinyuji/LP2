@@ -3,6 +3,7 @@ package ifmt.cba.vo;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "cliente")
 public class Cliente extends Pessoa{
 
     private float limiteCredito;
