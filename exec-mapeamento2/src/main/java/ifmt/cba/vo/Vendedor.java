@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "vendedor")
-public class Vendedor extends Pessoa {
+public class Vendedor extends PessoaFisica {
 
     private float perComissao;
 

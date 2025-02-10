@@ -2,6 +2,7 @@ package ifmt.cba.vo;
 
 import jakarta.persistence.*;
 @MappedSuperclass
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Pessoa {
 
     @Id
@@ -22,6 +23,4 @@ public abstract class Pessoa {
         this.name = name;
     }
     
-
-
 }

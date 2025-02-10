@@ -1,5 +1,7 @@
 package ifmt.cba.vo;
 
+import java.util.List;
+
 import jakarta.persistence.*;
 
 
@@ -7,22 +9,22 @@ import jakarta.persistence.*;
 @Table(name = "fornecedor")
 public class Fornecedor extends PessoaJuridica {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
+    private String nome;
+    private String cnpj;
+
+    @ManyToMany
+    @JoinTable(
+        name = "produto_fornecedor",
+        joinColumns = @JoinColumn(name = "fornecedor_id"),
+        inverseJoinColumns = @JoinColumn(name = "produto_id")
+    )
+    private List<Produto> produtos;
+
     // Getters Setters
 
-    public String getRazaoSocialFornecedor(){
-        return getRazaoSocial();
-    }
-    public String getNameSocialFornecedor(){
-        return getNameFantasia();
-    }
-    public int getId(){
-        return super.getId();
-    }
 
-    public void setRazaoSocialFornecedor(String razaoSocial){
-        setRazaoSocial(razaoSocial);
-    } 
-    public void setNameFantasiaFornecedor(String nameFantasia){
-        setNameFantasia(nameFantasia);
-    } 
 }
