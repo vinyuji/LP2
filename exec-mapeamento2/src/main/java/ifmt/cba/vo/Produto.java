@@ -19,7 +19,7 @@ public class Produto {
     @JoinColumn(name = "grupo_id", nullable = false)
     private GrupoProduto grupoProduto;
 
-    @ManyToMany(mappedBy = "produtos")
+    @OneToMany(mappedBy = "produto")
     private List<Fornecedor> fornecedores;
 
     @ManyToOne
@@ -33,11 +33,11 @@ public class Produto {
         return id;
     }
 
-    public String getNome() {
+    public String getName() {
         return name;
     }
 
-    public void setNome(String nome) {
+    public void setName(String nome) {
         this.name = nome;
     }
 

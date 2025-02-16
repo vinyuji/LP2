@@ -2,7 +2,7 @@ package ifmt.cba.vo;
 
 import jakarta.persistence.*;
 
-@MappedSuperclass
+@Entity
 public class PessoaFisica extends Pessoa {
 
     private String cpf;

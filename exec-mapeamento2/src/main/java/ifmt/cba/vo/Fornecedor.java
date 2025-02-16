@@ -9,12 +9,6 @@ import jakarta.persistence.*;
 @Table(name = "fornecedor")
 public class Fornecedor extends PessoaJuridica {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-
-    private String nome;
-    private String cnpj;
 
     @ManyToMany
     @JoinTable(
@@ -23,8 +17,6 @@ public class Fornecedor extends PessoaJuridica {
         inverseJoinColumns = @JoinColumn(name = "produto_id")
     )
     private List<Produto> produtos;
-
-    // Getters Setters
 
 
 }

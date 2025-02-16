@@ -1,5 +1,7 @@
 package ifmt.cba.vo;
 
+import java.util.List;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -7,6 +9,9 @@ import jakarta.persistence.*;
 public class Cliente extends PessoaFisica{
 
     private float limiteCredito;
+
+    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
+    private List<Venda> vendas;
 
     // getters setters
 

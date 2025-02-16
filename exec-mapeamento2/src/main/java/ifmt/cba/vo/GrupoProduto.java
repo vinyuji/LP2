@@ -26,7 +26,7 @@ public class GrupoProduto{
         return this.name;
     }
 
-    public void detName( String name){
+    public void setName( String name){
         this.name = name;
     }
 

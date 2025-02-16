@@ -1,8 +1,8 @@
 package ifmt.cba.vo;
 
-import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.*;
 
-@MappedSuperclass
+@Entity
 public class PessoaJuridica extends Pessoa{
 
     private String razaoSocial;
