@@ -21,4 +21,11 @@ public class Vendedor extends PessoaFisica {
     public void setPerComissao (float perComissao){
         this.perComissao = perComissao;
     }
+
+    public List<Venda> getVenda(){
+        return this.vendas;
+    }
+    public void setVenda( List<Venda> venda){
+        this.vendas = venda;
+    }
 }

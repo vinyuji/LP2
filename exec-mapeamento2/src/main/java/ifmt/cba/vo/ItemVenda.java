@@ -30,6 +30,12 @@ public class ItemVenda {
     public float getPerDesconto(){
         return this.perDesconto;
     }
+    // public Venda getVendas() {
+    //     return this.venda;
+    // }
+    public Produto getProduto() {
+        return this.produtos;
+    }
 
     public void setQuantidade(int quantidade){
         this.quantidade = quantidade;
@@ -39,6 +45,12 @@ public class ItemVenda {
     }
     public void setPerDesconto(int perDesconto){
         this.perDesconto = perDesconto;
+    }
+    // public void setVendas(Venda venda) {
+    //     this.venda = venda;
+    // }
+    public void setProdutos(Produto produto) {
+        this.produtos = produto;
     }
 
 }

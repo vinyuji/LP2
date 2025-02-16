@@ -31,9 +31,29 @@ public class Venda {
     public Date getDataVenda(){
         return this.dataVenda;
     }
-
     public void setDataVenda(Date datavenda){
         this.dataVenda = datavenda;
+    }
+
+    public List<ItemVenda> getItemVendas() {
+        return this.itensVenda;
+    }
+    public void setVendas(List<ItemVenda> itemVendas) {
+        this.itensVenda = itemVendas;
+    }
+
+    public Vendedor getVendedor(){
+        return this.vendedor;
+    }
+    public void setVendedor(Vendedor vendedor){
+        this.vendedor = vendedor;
+    }
+
+    public Cliente getCliente(){
+        return this.cliente;
+    }
+    public void setCliente(Cliente cliente){
+        this.cliente = cliente;
     }
 
 }

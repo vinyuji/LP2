@@ -22,5 +22,12 @@ public class Cliente extends PessoaFisica{
         this.limiteCredito = limiteCredito;
     }
 
+    public List<Venda> getVendas() {
+        return this.vendas;
+    }
+    public void setVendas(List<Venda> vendas) {
+        this.vendas = vendas;
+    }
+
     
 }

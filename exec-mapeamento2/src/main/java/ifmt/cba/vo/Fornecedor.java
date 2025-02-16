@@ -10,13 +10,15 @@ import jakarta.persistence.*;
 public class Fornecedor extends PessoaJuridica {
 
 
-    @ManyToMany
-    @JoinTable(
-        name = "produto_fornecedor",
-        joinColumns = @JoinColumn(name = "fornecedor_id"),
-        inverseJoinColumns = @JoinColumn(name = "produto_id")
-    )
+    @OneToMany(mappedBy = "grupoProduto", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Produto> produtos;
+
+    public List<Produto> getProdutos() {
+        return this.produtos;
+    }
+    public void setProdutos(List<Produto> produtos) {
+        this.produtos = produtos;
+    }
 
 
 }

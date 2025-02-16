@@ -1,7 +1,5 @@
 package ifmt.cba.vo;
 
-import java.util.List;
-
 import jakarta.persistence.*;
 
 @Entity
@@ -19,8 +17,9 @@ public class Produto {
     @JoinColumn(name = "grupo_id", nullable = false)
     private GrupoProduto grupoProduto;
 
-    @OneToMany(mappedBy = "produto")
-    private List<Fornecedor> fornecedores;
+    @ManyToOne
+    @JoinColumn(name = "fornecedor_id")
+    private Fornecedor fornecedor;
 
     @ManyToOne
     @JoinColumn(name = "item_venda_id")
@@ -36,7 +35,6 @@ public class Produto {
     public String getName() {
         return name;
     }
-
     public void setName(String nome) {
         this.name = nome;
     }
@@ -44,7 +42,6 @@ public class Produto {
     public double getPreco() {
         return precoVenda;
     }
-
     public void setPreco(double preco) {
         this.precoVenda = preco;
     }
@@ -52,9 +49,22 @@ public class Produto {
     public GrupoProduto getGrupoProduto() {
         return grupoProduto;
     }
-
     public void setGrupoProduto(GrupoProduto grupoProduto) {
         this.grupoProduto = grupoProduto;
     }
+
+    public Fornecedor getFornecedor() {
+        return this.fornecedor;
+    }
+    public void setFornecedor(Fornecedor fornecedores) {
+        this.fornecedor = fornecedores;
+    }
+
+    // public ItemVenda getItemVenda() {
+    //     return itemVenda;
+    // }
+    // public void setItemVenda(ItemVenda itemVenda) {
+    //     this.itemVenda = itemVenda;
+    // }
 }
 
