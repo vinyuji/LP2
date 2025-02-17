@@ -2,23 +2,27 @@ package ifmt.cba.apps;
 
 import java.text.SimpleDateFormat;
 
+import ifmt.cba.vo.GrupoProduto;
 import ifmt.cba.vo.*;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.Persistence;
+
+import jakarta.persistence.*;
 
 public class PersistenceAPP {
     
     public static void main(String[] args) {
-
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("venda2");
-        EntityManager em = emf.createEntityManager(); 
-        
-        System.out.println("contexto criado com sucesso");
-        em.getTransaction().begin();
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("VendasTwo");
+        if (emf == null) {
+            System.out.println("EntityManagerFactory não foi criado!");
+        }
+        EntityManager em = emf.createEntityManager();
+        if (em == null) {
+            System.out.println("EntityManager não foi criado!");
+        }
 
         try {
-
+    
+            em.getTransaction().begin();
+            
             // Criando e persistindo GrupoProduto  
             GrupoProduto grupo1 = new GrupoProduto();
             grupo1.setName("Sementes");
@@ -39,19 +43,17 @@ public class PersistenceAPP {
             fornecedor1.setName("VinyciusLegumesLTDA");
             fornecedor1.setNameFantasia("VinyciusLegumes");
             fornecedor1.setRazaoSocial("alimentar as pessoas");
-            fornecedor1.setProdutos(null);
+    
             
             Fornecedor fornecedor2 = new Fornecedor();
             fornecedor2.setName("VinyciusMassasLTDA");
             fornecedor2.setNameFantasia("VinyciusMassas");
             fornecedor2.setRazaoSocial("alimentar as pessoas");
-            fornecedor2.setProdutos(null);
     
             Fornecedor fornecedor3 = new Fornecedor();
             fornecedor3.setName("VinyciusSementesLTDA");
             fornecedor3.setNameFantasia("VinyciusSementes");
             fornecedor3.setRazaoSocial("alimentar as pessoas");
-            fornecedor3.setProdutos(null);
                 
             em.persist(fornecedor3);
             em.persist(fornecedor1);
@@ -169,6 +171,11 @@ public class PersistenceAPP {
             itemVenda5.setProdutos(produto2);
 
 
+            em.persist(itemVenda1);
+            em.persist(itemVenda2);
+            em.persist(itemVenda3);
+            em.persist(itemVenda4);
+            em.persist(itemVenda5);
 
             // criando e persistindo Venda
 
@@ -251,7 +258,6 @@ public class PersistenceAPP {
             e.printStackTrace();
         } finally {
             em.close();
-            emf.close();
         }
     }
 }

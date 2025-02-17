@@ -1,4 +1,4 @@
-package ifmt.cba;
+package ifmt.com;
 
 import static org.junit.Assert.assertTrue;
 

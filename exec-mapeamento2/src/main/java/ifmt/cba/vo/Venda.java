@@ -3,6 +3,7 @@ package ifmt.cba.vo;
 import jakarta.persistence.*;
 
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -16,7 +17,7 @@ public class Venda {
     private Date dataVenda;
 
     @OneToMany(mappedBy = "venda", cascade = CascadeType.ALL)
-    private List<ItemVenda> itensVenda;
+    private List<ItemVenda> itensVenda = new ArrayList<>();
 
     @ManyToOne
     @JoinColumn(name = "vendedor_id")
@@ -36,7 +37,10 @@ public class Venda {
     }
 
     public List<ItemVenda> getItemVendas() {
-        return this.itensVenda;
+        if (itensVenda == null) {
+            itensVenda = new ArrayList<>();
+        }
+        return itensVenda;
     }
     public void setVendas(List<ItemVenda> itemVendas) {
         this.itensVenda = itemVendas;

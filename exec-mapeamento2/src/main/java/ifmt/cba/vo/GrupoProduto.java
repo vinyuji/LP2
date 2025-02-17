@@ -4,6 +4,8 @@ package ifmt.cba.vo;
 
 import jakarta.persistence.*;
 import java.util.*;
+
+
 @Entity
 @Table(name = "grupo_produto")
 public class GrupoProduto{ 

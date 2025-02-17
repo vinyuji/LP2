@@ -10,7 +10,7 @@ import jakarta.persistence.*;
 public class Fornecedor extends PessoaJuridica {
 
 
-    @OneToMany(mappedBy = "grupoProduto", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "fornecedor", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Produto> produtos;
 
     public List<Produto> getProdutos() {
