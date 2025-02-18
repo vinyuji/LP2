@@ -19,6 +19,7 @@ public class ListarPessoasJuridicas {
 
         for (Object[] obj : resultado) {
             System.out.println("Código: " + obj[0] + ", Nome Fantasia: " + obj[1] + ", CNPJ: " + obj[2]);
+            System.out.println("---------------------------------------------------------------------");
         }
 
         em.getTransaction().commit();

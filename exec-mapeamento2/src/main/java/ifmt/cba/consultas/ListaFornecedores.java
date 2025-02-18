@@ -23,6 +23,7 @@ public class ListaFornecedores {
                 for (Produto produto : fornecedor.getProdutos()) {
                     System.out.println("    Produto: " + produto.getId() + " - " + fornecedor.getProdutos());
                 }
+                System.out.println("--------------------------------------------------");
             }
         } catch (Exception e) {
             System.out.println("Erro ao listar fornecedores: " + e.getMessage());

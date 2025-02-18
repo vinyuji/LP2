@@ -30,6 +30,7 @@ public class ListarPessoas {
 
         for (Object[] obj : resultadoJuridica) {
             System.out.println("Código: " + obj[0] + ", Nome: " + obj[1]);
+            System.out.println("--------------------------------------------------");
         }
 
         em.getTransaction().commit();

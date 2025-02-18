@@ -3,6 +3,8 @@ package ifmt.cba.vo;
 import jakarta.persistence.*;
 
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED)
+@Table(name = "pessoa_fisica")
 public class PessoaFisica extends Pessoa {
 
     private String cpf;

@@ -21,6 +21,7 @@ public class ListarPessoasFisicas {
 
         for (Object[] obj : resultado) {
             System.out.println("Código: " + obj[0] + ", Nome: " + obj[1] + ", RG: " + obj[2] + ", CPF: " + obj[3]);
+            System.out.println("-------------------------------------------------------------------");
         }
 
         em.getTransaction().commit();
