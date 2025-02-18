@@ -1,5 +1,6 @@
 package ifmt.cba.vo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.*;
@@ -11,7 +12,7 @@ public class Cliente extends PessoaFisica{
     private float limiteCredito;
 
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
-    private List<Venda> vendas;
+    private List<Venda> vendas = new ArrayList<>();
 
     // getters setters
 
@@ -22,11 +23,12 @@ public class Cliente extends PessoaFisica{
         this.limiteCredito = limiteCredito;
     }
 
-    public List<Venda> getVendas() {
-        return this.vendas;
+    public Cliente() {
+        this.vendas = new ArrayList<>();
     }
-    public void setVendas(List<Venda> vendas) {
-        this.vendas = vendas;
+
+    public List<Venda> getVendas() {
+        return vendas;
     }
 
     

@@ -15,6 +15,8 @@ public class Venda {
     private int id;
 
     private Date dataVenda;
+    private float valorTotal;
+    private float perComissao;
 
     @OneToMany(mappedBy = "venda", cascade = CascadeType.ALL)
     private List<ItemVenda> itensVenda = new ArrayList<>();
@@ -34,6 +36,18 @@ public class Venda {
     }
     public void setDataVenda(Date datavenda){
         this.dataVenda = datavenda;
+    }
+    public float getTotal(){
+        return this.valorTotal;
+    }
+    public void setTotal(float valorTotal){
+        this.valorTotal = valorTotal;
+    }
+    public float getPerComissao(){
+        return this.perComissao;
+    }
+    public void setPerComissao(float perComissao){
+        this.perComissao = perComissao;
     }
 
     public List<ItemVenda> getItemVendas() {

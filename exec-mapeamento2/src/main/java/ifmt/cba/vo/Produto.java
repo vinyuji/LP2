@@ -60,11 +60,9 @@ public class Produto {
         this.fornecedor = fornecedores;
     }
 
-    // public ItemVenda getItemVenda() {
-    //     return itemVenda;
-    // }
-    // public void setItemVenda(ItemVenda itemVenda) {
-    //     this.itemVenda = itemVenda;
-    // }
+    @Override
+    public String toString() {
+        return id + " - " + name + " (Preço: " + precoVenda + ")";
+    }
 }
 

@@ -9,18 +9,18 @@ public abstract class Pessoa {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private String name; 
+    private String nome; 
 
     // Getters Setters
 
-    public String getName(){
-        return this.name;
+    public String getNome(){
+        return this.nome;
     }
     public int getId(){
         return this.id;
     }
-    public void setName(String name){
-        this.name = name;
+    public void setNome(String nome){
+        this.nome = nome;
     }
     
 }

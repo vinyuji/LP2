@@ -1,41 +1,44 @@
 package ifmt.cba.vo;
 
-
-
 import jakarta.persistence.*;
 import java.util.*;
 
-
 @Entity
 @Table(name = "grupo_produto")
-public class GrupoProduto{ 
+public class GrupoProduto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private String name;
+    private String nome;
 
     @OneToMany(mappedBy = "grupoProduto", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Produto> produtos;
+    private List<Produto> produtos = new ArrayList<>(); // Inicializa a lista para evitar NullPointerException
 
-    //Getters Setters
+    // Getters e Setters
 
-    public int getId(){
+    public int getId() {
         return this.id;
     }
-    public String getName(){
-        return this.name;
+
+    public void setId(int id) { // Setter adicionado caso precise atribuir manualmente
+        this.id = id;
     }
 
-    public void setName( String name){
-        this.name = name;
+    public String getNome() {
+        return this.nome;
     }
 
-    // public List<Produto> getProdutos() {
-    //     return produtos;
-    // }
-    // public void setProdutos(List<Produto> produtos) {
-    //     this.produtos = produtos;
-    // }
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public List<Produto> getProdutos() {
+        return produtos;
+    }
+
+    public void setProdutos(List<Produto> produtos) {
+        this.produtos = produtos;
+    }
 }
